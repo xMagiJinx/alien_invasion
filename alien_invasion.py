@@ -1,5 +1,6 @@
 import sys
 import pygame
+from setting import Settings
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior."""
@@ -7,11 +8,13 @@ class AlienInvasion:
     def __init__(self):
         """Initialize game and resources"""
         pygame.init()
+        self.setting = Settings()
 
-        self.screen = pygame.display.set_mode((1200, 800))
+        self.screen = pygame.display.set_mode(
+            (self.setting.screen_width, self.setting.screen_height)
+        )
         pygame.display.set_caption("Alien Invasion")
 
-        self.bg_color = (230,255,255)
 
     def run_game(self):
         """Start main loop for the game"""
@@ -21,7 +24,7 @@ class AlienInvasion:
                     sys.exit()
             #watches for events from keyboard and mouse
 
-            self.screen.fill(self.bg_color)
+            self.screen.fill(self.setting.bg_color)
 
             pygame.display.flip()
 
