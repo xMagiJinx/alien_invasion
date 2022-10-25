@@ -12,21 +12,21 @@ class AlienInvasion:
     def __init__(self):
         """Initialize game and resources"""
         pygame.init()
-        self.setting = Settings()
+        self.settings = Settings()
 
-        # In the walkthrough he changes the screen to be fullscreen, I don't like fullscreen
+        # In the walkthrough he changes the screen to be fullscreen, I don't like fullscreen... idk
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
-        self.setting.screen_width = self.screen.get_rect().width
-        self.setting.screen_height = self.screen.get_rect().height
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
 
         # Movement flag
-        self.moving_right = False
-        self.moving_left = False
+        # self.moving_right = False
+        # self.moving_left = False
 
     def update(self):
         """Update the ship's position based on the movement flag"""
