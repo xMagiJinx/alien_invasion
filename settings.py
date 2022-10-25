@@ -9,7 +9,7 @@ class Settings:
         #ship settings
         self.ship_speed = 1.5
 
-        #bullet settings
+        #bullet settings 3 pixel side and 15 pixels tall
         self.bullet_speed = 1.0
         self.bullet_width = 3
         self.bullet_height = 15

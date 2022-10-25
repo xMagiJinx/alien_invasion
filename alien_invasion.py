@@ -15,13 +15,25 @@ class AlienInvasion:
         self.setting = Settings()
 
         # In the walkthrough he changes the screen to be fullscreen, I don't like fullscreen
-        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+
         self.setting.screen_width = self.screen.get_rect().width
         self.setting.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+
+        # Movement flag
+        self.moving_right = False
+        self.moving_left = False
+
+    def update(self):
+        """Update the ship's position based on the movement flag"""
+        if self.moving_right:
+            self.rect.x =+ 1
+        if self.moving_left:
+            self.rect.x -= 1
 
     def run_game(self):
         """Start main loop for the game"""
@@ -34,15 +46,15 @@ class AlienInvasion:
     def _check_events(self):
         """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
-            if event.type == pygame.QUIT():
+            if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
 
-    def _check_keydown_events(self):
-        """Respond to keypresses."""
+    def _check_keydown_events(self, event):
+        """Respond to down keypresses."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
@@ -64,12 +76,15 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
-    def _update_bullets(self):
-        self.bullets.update()
 
+    def _update_bullets(self):
+        """Update position of bullets and get rid of old bullets"""
+        self.bullets.update()
+        # Get ride of bullets that have disappeared
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
+        print(len(self.bullets))
 
     def _update_screen(self):
         """Update images on the screen and flip to new screen"""
@@ -78,6 +93,7 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         pygame.display.flip()
+
 
 if __name__ == '__main__':
     ai = AlienInvasion()
