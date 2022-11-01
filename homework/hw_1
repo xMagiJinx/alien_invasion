@@ -1,0 +1,14 @@
+import sys
+import pygame
+
+# 12-1 Make a Pygame window with a blue background
+
+
+# 12-2 bitmap image of a game character and convert to bitmap.
+# Make a class that draws the character and matches bgd color
+
+# 12-4 Makes rocket in the center. Player can move rocket and does not go beyond screen
+
+# 12-5 Pygame creates empty screen. event.key when pygame.keydown is detected.
+
+# 12-6 Ship on left side and moves up and down. bullet goes rightand disappears off the screen.
