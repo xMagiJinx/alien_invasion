@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4e3fe0b-8592-4731-a0ba-a0de8ecead1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hw_5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bullet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ship.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rocket_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rocket_settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
