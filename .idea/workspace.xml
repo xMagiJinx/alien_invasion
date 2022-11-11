@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f422df00-3723-4db3-aee2-44e7f9937452" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/homework2/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework2/star.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework/pictures/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework2/13_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/smile_character.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/smile_character.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/star.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/star.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +40,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/m255448/Documents/GitHub/alien_invasion"
+    "last_opened_file_path": "C:/Users/m255448/Documents/GitHub/alien_invasion/homework/pictures"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\m255448\Documents\GitHub\alien_invasion\homework\pictures" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

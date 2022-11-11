@@ -6,7 +6,7 @@ class Smile:
         self.screen = ed_smile.screen
         self.screen_rect = ed_smile.screen.get_rect()
 
-        self.image = pygame.image.load('pictures/smiley.png')
+        self.image = pygame.image.load('pictures/star.png')
         self.rect = self.image.get_rect()
 
         self.rect.center = self.screen_rect.center

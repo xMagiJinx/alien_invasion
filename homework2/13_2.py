@@ -1,5 +1,6 @@
 # make a grid of stars
 import sys
+from random import randint
 
 import pygame
 
@@ -64,6 +65,10 @@ class StarScreen:
         star.x = star_width + 2 * star_width * star_number
         star.rect.x = star.x
         star.rect.y = star.rect.height + 2 * star.rect.height * row_number
+
+        star.rect.x += randint(-10, 10)
+        star.rect.y += randint(-10, 10)
+
         self.stars.add(star)
 
     def _update_screen(self):
