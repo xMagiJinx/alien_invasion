@@ -10,10 +10,8 @@ class Ship:
         self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()
 
-        self.rect.midleft = self.screen_rect.midleft
+        self.center_ship()
 
-        self.y = float(self.rect.y)
-        # Taken from homework 1 because the ship wants to go up and down
         self.moving_up = False
         self.moving_down = False
 
@@ -25,6 +23,10 @@ class Ship:
             self.y += self.settings.ship_speed
 
         self.rect.y = self.y
+
+    def center_ship(self):
+        self.rect.midleft = self.screen_rect.midleft
+        self.y = float(self.rect.y)
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)

@@ -8,6 +8,7 @@ class Settings:
         self.bg_color = (255,255,255)
 
         self.ship_speed = 3
+        self.ship_limit = 3
 
         self.bullet_speed = 6.0
         #going sideways so now the width is longer than height
@@ -18,5 +19,5 @@ class Settings:
 
         # alien settings
         # make aliens appear at random
-        self.alien_appear = .008
+        self.alien_appear = .02
         self.alien_speed = .5

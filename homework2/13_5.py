@@ -7,6 +7,7 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+from game_stats import GameStats
 
 
 class Shooter:
@@ -19,6 +20,8 @@ class Shooter:
         )
         pygame.display.set_caption("Shooter")
 
+        self.stats = GameStats(self)
+
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
@@ -26,10 +29,13 @@ class Shooter:
     def run_game(self):
         while True:
             self._check_events()
-            self._create_alien()
-            self.ship.update()
-            self._update_bullets()
-            self.aliens.update()
+
+            if self.stats.game_active:
+                self._create_alien()
+                self.ship.update()
+                self._update_bullets()
+                self.aliens.update()
+
             self._update_screen()
 
     def _check_events(self):
@@ -82,7 +88,32 @@ class Shooter:
         if random() < self.settings.alien_appear:
             alien = Alien(self)
             self.aliens.add(alien)
-            print(len(self.aliens))
+            # print(len(self.aliens))
+
+    def _update_alien(self):
+        self.aliens.update()
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+
+        self._check_aliens_left_edge()
+
+    def _check_aliens_left_edge(self):
+        for alien in self.aliens.sprites():
+            if alien.rect.left < 0:
+                self._ship_hit()
+                break
+
+    def _ship_hit(self):
+        """Response to getting hit"""
+        if self.stats.ships_left > 0:
+            self.stats.ships_left -= 1
+
+            self.aliens.empty()
+            self.bullets.empty()
+            self.ship.center_ship()
+
+        else:
+            self.stats.game_active = False
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
